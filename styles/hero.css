@@ -20,23 +20,64 @@ section.hero {
     display: block;
     animation: slideUp 6s infinite ease;
 
-    &:nth-child(1), &:nth-child(4){
+    &:nth-child(1),
+    &:nth-child(4) {
       color: var(--snitap-sky-mid);
     }
 
-    &:nth-child(2){
+    &:nth-child(2) {
       color: var(--snitap-joy-mid);
     }
 
-    &:nth-child(3){
+    &:nth-child(3) {
       color: var(--snitap-leaf-mid);
+    }
+  }
+
+  /* BUTTONS */
+  & .buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    & .button {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-radius: 5rem;
+      transition: scale 350ms;
+
+      &.buy {
+        padding: 1.5rem 3rem;
+        background-color: var(--snitap-sun);
+      }
+
+      &.play span {
+        padding: 1.5rem;
+        border-radius: 50%;
+        background-color: white;
+        display: flex;
+      }
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+
+    & .shadow {
+      box-shadow:
+        0 2px 5px rgb(0 0 0 / 0.1),
+        0 9px 9px rgb(0 0 0 / 0.09),
+        0 20px 12px rgb(0 0 0 / 0.05),
+        0 30px 15px rgb(0 0 0 / 0.01);
     }
   }
 }
 
 @keyframes slideUp {
   /* RADICAL STATIC */
-  0%, 22% {
+  0%,
+  22% {
     transform: translateY(0);
   }
 
@@ -58,7 +99,8 @@ section.hero {
   }
 
   /* DIVERTIDA STATIC */
-  33%, 55% {
+  33%,
+  55% {
     transform: translateY(-5rem);
   }
 
@@ -80,11 +122,12 @@ section.hero {
   }
 
   /* SAUDÁVEL STATIC */
-  66%, 88% {
+  66%,
+  88% {
     transform: translateY(-10rem);
   }
 
-  /* RADICAL IN */  
+  /* RADICAL IN */
   89% {
     transform: translateY(calc(-15rem - 15px));
   }
