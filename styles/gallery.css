@@ -72,11 +72,7 @@ section.gallery {
         bottom: 0;
         width: 100%;
         padding: 1.5rem 2rem;
-        background: linear-gradient(
-          to top,
-          rgb(0 0 0 / 0.64),
-          rgb(0 0 0 / 0)
-        );
+        background: linear-gradient(to top, rgb(0 0 0 / 0.64), rgb(0 0 0 / 0));
         transform: translateY(100%);
         transition: transform 500ms;
 
@@ -105,5 +101,34 @@ section.gallery {
   from {
     opacity: 0;
     transform: translateY(100%);
+  }
+}
+
+@media (width < 68.75em) {
+  section.gallery {
+    padding: 1.5rem;
+
+    & header span {
+      font-size: 0.75rem;
+    }
+
+    & .content {
+      margin-top: 1.5rem;
+      grid-template-areas: "A" "B" "C" "D";
+      gap: 1.5rem;
+
+      & figure {
+        animation-range: 50px 200px;
+
+        &[data-delay] {
+          animation-range: 50px 200px;
+        }
+
+        & > img {
+          height: 16rem;
+          aspect-ratio: 1/1;
+        }
+      }
+    }
   }
 }
